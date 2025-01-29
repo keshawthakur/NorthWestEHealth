@@ -1,0 +1,18 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem<ContentModels.IsoLogo>>
+
+
+
+@if (Model.Content.Logos != null)
+{
+    @foreach(var item in Model.Content.Logos){
+        <img src="@item.Url()" alt="">
+    }
+   
+
+
+}
+else
+{
+    @* <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" target="@Model.Content.Link?.Target" href="@Model.Content.Link?.Url">@Model.Content.Link?.Name</a></li> *@
+}
+

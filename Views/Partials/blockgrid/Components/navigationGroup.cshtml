@@ -1,0 +1,40 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem<ContentModels.NavigationGroup>>
+
+@{
+
+    var name = @TempData["name"];
+}
+
+@if (name == "mainNavigation")
+{
+    <li><a target="@Model.Content.Link?.Target" href="@Model.Content.Link?.Url">@Model.Content.Link?.Name</a></li>
+}
+
+
+
+@if (name == "footerContentProperty")
+{
+
+
+    @if (true)
+    {
+
+        <div class="col ftr4" aria-labelledby="@Model.Content.Key.ToString("N")">
+        @if (!string.IsNullOrWhiteSpace(Model.Content.MainTitle) || !string.IsNullOrWhiteSpace(Model.Content.Title))
+        {
+            <div class="ftr-hd">@Model.Content.MainTitle</div>
+            <div class="ftr-hd m-0">@Model.Content.Title</div>
+        }
+            <ul class="ftr-menu">
+                @foreach (var childLink in Model.Content.ChildLinks)
+                {
+                    <li><a target="@childLink.Target" href="@childLink.Url">@childLink.Name</a></li>
+                }
+            </ul>
+           
+        </div>
+
+    }
+
+}
+

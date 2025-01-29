@@ -1,0 +1,46 @@
+﻿@inherits UmbracoViewPage
+
+
+@{
+
+    TempData["name"] = "footerContentProperty";
+    var name = TempData["name"];
+    var siteSettings = Model.GetSiteSettings();
+    if (siteSettings is null) return;
+
+
+
+
+
+
+
+    var footerData = siteSettings.GetMainFooterData();
+
+
+
+    var footerLeftSection = footerData?.First().Content;
+
+    var footerLogo = ((Umbraco.Cms.Web.Common.PublishedModels.FooterContent)footerLeftSection).FooterLogo.Url() ?? @siteSettings.SiteLogo?.Url();
+}
+
+<!-- Footer Start -->
+<footer class="footer bg-blue pt-10 pb-10">
+    <div class="container">
+        <div class="ftr-logo"><a href="index.html"><img src="@footerLogo" alt=""></a></div>
+        <div class="row">
+
+            @await Html.GetBlockGridHtmlAsync(siteSettings.FooterContentProperty)
+
+        </div>
+        <div class="iso-logo">
+
+
+            @await Html.GetBlockGridHtmlAsync(siteSettings.IsoLogoProperty)
+
+
+          
+        </div>
+    </div>
+    <div class="ftr-border-design"></div>
+</footer>
+<!-- Footer End -->

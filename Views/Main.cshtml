@@ -1,0 +1,29 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+@await Html.PartialAsync("Template Components/MetaDataMain")
+   <link rel="stylesheet" href="css/style.css">
+   <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+	@await Html.PartialAsync("mainNavigation")
+@RenderBody()
+	@await Html.PartialAsync("footerContentProperty")
+   <script src="js/popper.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <script src="js/mobile-menu.js"></script>
+   <script src="js/owl.carousel.min.js"></script>
+   <script src="js/custom.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Home>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Main.cshtml";
+}
+
+
+@* @await Html.PartialAsync("Template Components/Header") *@
+
+  @await Html.PartialAsync("Template Components/Home Banner")
+
+   @await Html.PartialAsync("Template Components/About NWEH")
+
+  @await Html.PartialAsync("Template Components/WhatWeDo")
+
+  @await Html.PartialAsync("Template Components/OurTechnology")
+
+  @await Html.PartialAsync("Template Components/GetInTouch")
+ @await Html.PartialAsync("Template Components/NewsInsights")
+ 
+@* @await Html.PartialAsync("Template Components/Footer") *@
+

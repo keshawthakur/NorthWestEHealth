@@ -1,0 +1,30 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem<ContentModels.FooterContent>>
+
+
+
+@if (Model.Content != null)
+{
+    @if (Model.Content.FooterDescription != null)
+    {
+
+        var data = Model.Content;
+
+    
+            <div class="col ftr1">
+            <div class="ftr-hd">@data.FooterTitle</div>
+            <div class="ftr-hd m-0">@data.FooterSubtitle</div>
+            
+            @Model.Content.FooterDescription
+       
+      </div>
+
+        
+
+        
+    }
+}
+else
+{
+    @* <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" target="@Model.Content.Link?.Target" href="@Model.Content.Link?.Url">@Model.Content.Link?.Name</a></li> *@
+}
+
